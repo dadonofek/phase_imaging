@@ -52,9 +52,9 @@ def create_movie_from_images(dipole_dir):
     if images:
         imageio.mimsave(output_file, images, fps=10)  # Adjust fps as needed
 
-
-base_dir = '/Users/dadonofek/Documents/phase_imaging_db/v_1/dipole'
-for dir in sorted(os.listdir(base_dir))[1:]:
-    dipole_dir = os.path.join(base_dir, dir)
-    extract_and_plot_quality(dipole_dir, save=True)
-    create_movie_from_images(dipole_dir)
+if __name__ == '__main__':
+    base_dir = '/Users/dadonofek/Documents/phase_imaging_db/v_1/dipole'
+    for dir in sorted(os.listdir(base_dir))[1:]:
+        dipole_dir = os.path.join(base_dir, dir)
+        extract_and_plot_quality(dipole_dir, save=True)
+        create_movie_from_images(dipole_dir)
